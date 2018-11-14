@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  { path: 'buttons', loadChildren: './buttons/buttons.module#ButtonsPageModule' },
+  { path: 'cards', loadChildren: './cards/cards.module#CardsPageModule' },
+  { path: 'toolbar', loadChildren: './toolbar/toolbar.module#ToolbarPageModule' },
+  { path: 'presents', loadChildren: './presents/presents.module#PresentsPageModule' }
 ];
 
 @NgModule({
