@@ -40,6 +40,11 @@ export class AppComponent {
       url: '/presents',
       icon: 'contact'
     },
+    {
+      title: 'forms',
+      url: '/forms',
+      icon: 'list'
+    },
   ];
 
   constructor(

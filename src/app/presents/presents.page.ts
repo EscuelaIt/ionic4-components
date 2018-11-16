@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, AlertController } from '@ionic/angular';
+import { ActionSheetController, AlertController, ToastController, ModalController } from '@ionic/angular';
+
+import { ModalPage } from './../modal/modal.page';
 
 @Component({
   selector: 'app-presents',
@@ -11,6 +13,8 @@ export class PresentsPage implements OnInit {
   constructor(
     private actionCtrl: ActionSheetController,
     private alertCtrl: AlertController,
+    private toastCtrl: ToastController,
+    private modalCtrl: ModalController
   ) { }
 
   ngOnInit() {
@@ -58,6 +62,26 @@ export class PresentsPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  async openToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Hola',
+      position: 'bottom',
+      duration: 8000,
+      showCloseButton: true,
+      closeButtonText: 'Cerrar'
+    });
+
+    await toast.present();
+  }
+
+  async openModal() {
+    const modal = await this.modalCtrl.create({
+      component: ModalPage
+    });
+
+    await modal.present();
   }
 
 }
